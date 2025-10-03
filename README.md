@@ -1,54 +1,54 @@
-# React + TypeScript + Vite
+# React Components
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A collection of reusable React components built with TypeScript and Tailwind CSS.
 
-Currently, two official plugins are available:
+## Components
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Statbox
 
-## Expanding the ESLint configuration
+A flexible statistical display component with multiple variants and customization options.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+**Features:**
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ["./tsconfig.node.json", "./tsconfig.app.json"],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-});
+- Multiple size variants (sm, md, lg)
+- Color theming system
+- Optional icons and borders
+- Change indicators with trend arrows
+- Center layout for value-only display
+
+**Usage:**
+
+```tsx
+import { Statbox } from "./components/Statbox/Statbox";
+
+<Statbox
+  data={{ title: "Revenue", value: "1.2M" }}
+  size="md"
+  color="primary"
+  boxed
+/>;
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Development
 
-```js
-// eslint.config.js
-import reactX from "eslint-plugin-react-x";
-import reactDom from "eslint-plugin-react-dom";
+```bash
+# Install dependencies
+npm install
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    "react-x": reactX,
-    "react-dom": reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs["recommended-typescript"].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-});
+# Start development server
+npm run dev
+
+# Run Storybook
+npm run storybook
+
+# Build for production
+npm run build
 ```
+
+## Tech Stack
+
+- React 18
+- TypeScript
+- Tailwind CSS
+- Vite
+- Storybook
