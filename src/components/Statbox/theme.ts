@@ -1,21 +1,21 @@
 import type { StatboxTheme } from "./types";
 
 export const statboxTheme: StatboxTheme = {
-  base: "",
+  base: "w-64 min-w-[256px]", // Ensure minimum width
   boxed: "rounded-lg border border-gray-300",
   wrapper: "flex items-center space-x-4",
   icon: "h-8 w-8 shrink-0",
   content: {
     base: "",
     title: "text-gray-600 font-medium",
-    value: "text-2xl font-bold",
+    value: "font-medium",
     subtitle: "text-sm text-gray-500 mt-1",
     valueOnly: "absolute inset-0 flex items-center justify-center text-center",
-  },
-  sizes: {
-    sm: "w-48 min-h-[80px] p-3",
-    md: "w-64 min-h-[100px] p-4",
-    lg: "w-80 min-h-[120px] p-6",
+    valueSizes: {
+      sm: "text-lg",
+      md: "text-2xl",
+      lg: "text-4xl",
+    },
   },
   colors: {
     primary: "text-blue-600",

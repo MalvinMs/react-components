@@ -84,14 +84,14 @@ export const Statbox = forwardRef<HTMLDivElement, StatboxProps>(
       content: {
         ...statboxTheme.content,
         ...customTheme?.content,
+        valueSizes: {
+          ...statboxTheme.content.valueSizes,
+          ...customTheme?.content?.valueSizes,
+        },
       },
       colors: {
         ...statboxTheme.colors,
         ...customTheme?.colors,
-      },
-      sizes: {
-        ...statboxTheme.sizes,
-        ...customTheme?.sizes,
       },
       change: {
         ...statboxTheme.change,
@@ -127,8 +127,8 @@ export const Statbox = forwardRef<HTMLDivElement, StatboxProps>(
         ref={ref}
         className={twMerge(
           mergedTheme.base,
-          mergedTheme.sizes?.[size],
-          isValueOnly && "relative", // Add relative positioning for value-only
+          "min-h-[100px] p-4", // Fixed card styling
+          isValueOnly && "relative",
           boxed && mergedTheme.boxed,
           className,
         )}
@@ -139,6 +139,7 @@ export const Statbox = forwardRef<HTMLDivElement, StatboxProps>(
             <h3
               className={twMerge(
                 mergedTheme.content.value,
+                mergedTheme.content.valueSizes[size],
                 mergedTheme.colors[color],
               )}
             >
@@ -161,6 +162,7 @@ export const Statbox = forwardRef<HTMLDivElement, StatboxProps>(
               <h3
                 className={twMerge(
                   mergedTheme.content.value,
+                  mergedTheme.content.valueSizes[size],
                   mergedTheme.colors[color],
                 )}
               >

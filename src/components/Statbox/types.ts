@@ -21,6 +21,11 @@ export interface StatboxTheme {
     value: string;
     subtitle: string;
     valueOnly: string;
+    valueSizes: {
+      sm: string;
+      md: string;
+      lg: string;
+    };
   };
   colors: {
     [key: string]: string;
@@ -31,11 +36,7 @@ export interface StatboxTheme {
     warning: string;
     info: string;
   };
-  sizes?: {
-    sm: string;
-    md: string;
-    lg: string;
-  };
+
   change?: {
     base: string;
     up: string;
