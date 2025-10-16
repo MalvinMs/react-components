@@ -9,12 +9,22 @@ export const statboxTheme: StatboxTheme = {
     base: "",
     title: "text-gray-600 font-medium",
     value: "font-medium",
-    subtitle: "text-sm text-gray-500 mt-1",
+    subtitle: "text-gray-500 mt-1",
     valueOnly: "absolute inset-0 flex items-center justify-center text-center",
     valueSizes: {
       sm: "text-lg",
       md: "text-2xl",
       lg: "text-4xl",
+    },
+    titleSizes: {
+      sm: "text-xs",
+      md: "text-sm",
+      lg: "text-base",
+    },
+    subtitleSizes: {
+      sm: "text-[10px]",
+      md: "text-xs",
+      lg: "text-sm",
     },
   },
   colors: {

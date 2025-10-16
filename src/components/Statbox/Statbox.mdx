@@ -1,0 +1,224 @@
+import {
+  Meta,
+  Canvas,
+  Controls,
+  Description,
+  Stories,
+} from "@storybook/addon-docs/blocks";
+import * as StatboxStories from "./Statbox.stories";
+
+<Meta of={StatboxStories} />
+
+# Statbox
+
+<Description of={StatboxStories} />
+
+A flexible component for displaying statistical data with optional icons, borders, and change indicators. Perfect for dashboards and data visualization interfaces.
+
+## Basic Usage
+
+The simplest form of Statbox displays just a title and value:
+
+<Canvas of={StatboxStories.Basic} />
+
+## With Border (Boxed)
+
+Add a border by setting the `boxed` prop to create visual separation:
+
+<Canvas of={StatboxStories.WithBorder} />
+
+## With Icon
+
+Include an icon component to add visual context to your statistics:
+
+<Canvas of={StatboxStories.WithIcon} />
+
+## Complete Example
+
+A fully-featured Statbox with all available options:
+
+<Canvas of={StatboxStories.CompleteData} />
+
+## Trends
+
+### Positive Trend
+
+<Canvas of={StatboxStories.CompleteData} />
+
+### Negative Trend
+
+<Canvas of={StatboxStories.NegativeTrend} />
+
+## Size Variants
+
+Statbox comes in three sizes to fit different layout needs:
+
+### Small (sm)
+
+Compact size (192px × 80px) for dense layouts:
+
+<Canvas of={StatboxStories.SmallSize} />
+
+### Medium (md) - Default
+
+Standard size (256px × 100px) for general use:
+
+<Canvas of={StatboxStories.MediumSize} />
+
+### Large (lg)
+
+Spacious size (320px × 120px) for prominent displays:
+
+<Canvas of={StatboxStories.LargeSize} />
+
+## Color Variants
+
+Statbox supports multiple color schemes to match your design system:
+
+<Canvas of={StatboxStories.AllColors} />
+
+Available colors: `primary`, `secondary`, `success`, `danger`, `warning`, `info`
+
+## Minimal Display
+
+For compact layouts, you can display only the value:
+
+<Canvas of={StatboxStories.ValueOnly} />
+
+## Props
+
+<Controls />
+
+## Data Structure
+
+The `data` prop accepts an object with the following structure:
+
+```typescript
+interface StatboxData {
+  title?: string;
+  value: string | number;
+  subtitle?: string;
+  change?: {
+    value: number;
+    trend: "up" | "down";
+    label?: string;
+    percentage?: boolean;
+  };
+}
+```
+
+### Examples
+
+**Basic data:**
+
+```tsx
+<Statbox
+  data={{
+    title: "Total Revenue",
+    value: "Rp 275.450.000",
+  }}
+/>
+```
+
+**With change indicator:**
+
+```tsx
+<Statbox
+  data={{
+    title: "Monthly Growth",
+    value: "+5.8%",
+    change: {
+      value: 12,
+      trend: "up",
+      label: "vs last month",
+      percentage: true,
+    },
+  }}
+  showChange={true}
+/>
+```
+
+**With icon:**
+
+```tsx
+import { Cash } from "flowbite-react-icons/solid";
+
+<Statbox
+  data={{
+    title: "Total Sales",
+    value: "Rp 1.2M",
+  }}
+  icon={Cash}
+  color="success"
+/>;
+```
+
+## Accessibility
+
+- Uses semantic HTML structure
+- Proper color contrast ratios for all variants
+- Icon components include appropriate ARIA labels
+- Change indicators use color and icons (not color alone) for accessibility
+
+## Best Practices
+
+- **Use appropriate colors**: Match the color to the data meaning (success for positive metrics, danger for errors)
+- **Keep values concise**: Format large numbers with appropriate suffixes (k, M, B)
+- **Provide context**: Use subtitles to explain what the value represents
+- **Show trends**: Use change indicators to help users understand data movement
+- **Choose appropriate size**: Use smaller sizes for dense dashboards, larger for key metrics
+
+## Common Use Cases
+
+### Dashboard Cards
+
+```tsx
+<Statbox
+  data={{
+    title: "Active Users",
+    value: "12,847",
+    subtitle: "Daily active users",
+    change: { value: 5.2, trend: "up", percentage: true },
+  }}
+  icon={Users}
+  color="primary"
+  boxed={true}
+/>
+```
+
+### KPI Display
+
+```tsx
+<Statbox
+  data={{
+    title: "Conversion Rate",
+    value: "3.24%",
+    change: { value: 0.8, trend: "up", label: "vs last week" },
+  }}
+  color="success"
+  size="lg"
+/>
+```
+
+### Error Monitoring
+
+```tsx
+<Statbox
+  data={{
+    title: "Error Rate",
+    value: "2.1%",
+    change: { value: 0.5, trend: "down", percentage: true },
+  }}
+  icon={Warning}
+  color="danger"
+  boxed={true}
+/>
+```
+
+## Related Components
+
+- For tabular data display, use `Table` component
+- For charts and graphs, use `Chart` component
+- For progress tracking, use `ProgressBar` component
+
+<Stories />

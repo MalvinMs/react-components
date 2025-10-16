@@ -88,6 +88,14 @@ export const Statbox = forwardRef<HTMLDivElement, StatboxProps>(
           ...statboxTheme.content.valueSizes,
           ...customTheme?.content?.valueSizes,
         },
+        titleSizes: {
+          ...statboxTheme.content.titleSizes,
+          ...customTheme?.content?.titleSizes,
+        },
+        subtitleSizes: {
+          ...statboxTheme.content.subtitleSizes,
+          ...customTheme?.content?.subtitleSizes,
+        },
       },
       colors: {
         ...statboxTheme.colors,
@@ -127,7 +135,7 @@ export const Statbox = forwardRef<HTMLDivElement, StatboxProps>(
         ref={ref}
         className={twMerge(
           mergedTheme.base,
-          "min-h-[100px] p-4", // Fixed card styling
+          "min-h-[100px] p-4",
           isValueOnly && "relative",
           boxed && mergedTheme.boxed,
           className,
@@ -155,7 +163,12 @@ export const Statbox = forwardRef<HTMLDivElement, StatboxProps>(
             )}
             <div className={twMerge(mergedTheme.content.base)}>
               {data.title && (
-                <p className={twMerge(mergedTheme.content.title)}>
+                <p
+                  className={twMerge(
+                    mergedTheme.content.title,
+                    mergedTheme.content.titleSizes[size],
+                  )}
+                >
                   {data.title}
                 </p>
               )}
@@ -169,7 +182,12 @@ export const Statbox = forwardRef<HTMLDivElement, StatboxProps>(
                 {data.value}
               </h3>
               {data.subtitle && (
-                <p className={twMerge(mergedTheme.content.subtitle)}>
+                <p
+                  className={twMerge(
+                    mergedTheme.content.subtitle,
+                    mergedTheme.content.subtitleSizes[size],
+                  )}
+                >
                   {data.subtitle}
                 </p>
               )}

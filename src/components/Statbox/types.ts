@@ -26,6 +26,16 @@ export interface StatboxTheme {
       md: string;
       lg: string;
     };
+    titleSizes: {
+      sm: string;
+      md: string;
+      lg: string;
+    };
+    subtitleSizes: {
+      sm: string;
+      md: string;
+      lg: string;
+    };
   };
   colors: {
     [key: string]: string;

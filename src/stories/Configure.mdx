@@ -1,0 +1,178 @@
+import { Meta } from "@storybook/addon-docs/blocks";
+
+<Meta title="Introduction" />
+
+<div className="intro-container">
+  <div className="intro-header">
+    <h1>React Components Library</h1>
+    <p>A modern, customizable React component library built with TypeScript and Tailwind CSS.</p>
+  </div>
+
+<div className="intro-section">
+  <h2>Getting Started</h2>
+  <div className="steps">
+    <div className="step">
+      <span className="step-number">1</span>
+      <div>
+        <h3>Browse</h3>
+        <p>Explore components in the sidebar</p>
+      </div>
+    </div>
+    <div className="step">
+      <span className="step-number">2</span>
+      <div>
+        <h3>Customize</h3>
+        <p>Modify props using the Controls panel</p>
+      </div>
+    </div>
+    <div className="step">
+      <span className="step-number">3</span>
+      <div>
+        <h3>Integrate</h3>
+        <p>Copy the code into your project</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div className="intro-section">
+    <h2>Features</h2>
+    <div className="features">
+      <div className="feature">
+        <span>✓</span>
+        <span>TypeScript Support</span>
+      </div>
+      <div className="feature">
+        <span>✓</span>
+        <span>Fully Customizable</span>
+      </div>
+      <div className="feature">
+        <span>✓</span>
+        <span>Responsive Design</span>
+      </div>
+      <div className="feature">
+        <span>✓</span>
+        <span>Accessible (WCAG)</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  {`
+  .intro-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+  }
+
+  .intro-header {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+
+  .intro-header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 12px;
+  }
+
+  .intro-header p {
+    font-size: 1.125rem;
+    color: #6b7280;
+    line-height: 1.6;
+  }
+
+  .intro-section {
+    margin-bottom: 60px;
+  }
+
+  .intro-section h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #111827;
+    margin-bottom: 24px;
+  }
+
+  .steps {
+    display: flex;
+    gap: 32px;
+  }
+
+  .step {
+    flex: 1;
+    display: flex;
+    gap: 16px;
+  }
+
+  .step-number {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #111827;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    flex-shrink: 0;
+  }
+
+  .step h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #111827;
+    margin: 0 0 4px 0;
+  }
+
+  .step p {
+    font-size: 0.875rem;
+    color: #6b7280;
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  .features {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .feature {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px;
+    background: #f9fafb;
+    border-radius: 8px;
+    font-size: 0.9375rem;
+    color: #374151;
+  }
+
+  .feature span:first-child {
+    color: #10b981;
+    font-weight: 600;
+    font-size: 1.125rem;
+  }
+
+  @media screen and (max-width: 768px) {
+    .intro-header h1 {
+      font-size: 2rem;
+    }
+
+    .intro-header p {
+      font-size: 1rem;
+    }
+
+    .steps {
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .features {
+      grid-template-columns: 1fr;
+    }
+  }
+  `}
+</style>
